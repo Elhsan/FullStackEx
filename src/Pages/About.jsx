@@ -1,19 +1,69 @@
-import style from "./styles/style_2.css"
+// Prop drilling and using useContext
+import { useContext, createContext } from "react";
+const TextContext = createContext();
 
-function About(props) {
+// useContext => is used to pass data from parent to 
+//               child without prop drilling
+// RU: используется для передачи данных от родителя к
+//    ребенку без 'prop drilling'
+
+// We have to use createContext() to create context
+// and show that context is a variable in useContext()
+// EX: 
+// const TextContext = createContext();
+// let x = useContext(TextContext);
+
+
+function Test(props) {
     return (
-        <body>
-        <div class="container">
-         <h1>Login</h1>
-         <form>
-          <input type="text" placeholder="Username" />
-          <input type="password" placeholder="Password" />
-          <input type="submit" value="Login" />
-         </form>
-        </div>
-       </body>
-    )
+        <>
+            <Test2 />
+        </>
+    );
 }
 
+function Test2(props) {
+    return (
+        <>
+            <Test3 />
+        </>
+    );
+}
+function Test3(props) {
+    return (
+        <>
+            <Test4 />
+        </>
+    );
+}
+function Test4(props) {
+    return (
+        <>
+            <Test5 />
+        </>
+    );
+}
+function Test5(props) {
+    const qwe = useContext(TextContext);
+    return (
+        <>
+            <h1>{ qwe.key }</h1>
+        </>
+    );
+}
+     
 
+
+function About(props) {
+
+    return (
+        <div>
+            <h1>About</h1>
+
+            <TextContext.Provider value={{key: "Hello world"}}>
+                <Test />
+            </TextContext.Provider>
+        </div>
+    )
+}
 export default About

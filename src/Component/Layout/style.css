@@ -11,7 +11,7 @@ ul {
 li {
     float: left;
     padding: 8px 16px;
-    border: solid 1px black;
+    border-right: solid 1px black;
 }
 li:hover {
     background-color: red;
@@ -19,13 +19,4 @@ li:hover {
 }
 li:hover a {
     color: snow;
-}
-
-.login {
-    position: absolute;
-    right: 0;
-}
-.register {
-    position: absolute;
-    right: 66px;
 }
