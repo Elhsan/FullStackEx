@@ -1,15 +1,18 @@
-import cardStyle from './style2.css'
+import cardStyle from './style.css'
 import { Link, Outlet } from 'react-router-dom'
 
-function Card2({card}) {
+function Card({card}) {
     return (
-        <div style={cardStyle} className="card2">
-            
+        <div style={cardStyle} className="card">
+            <div className="card-img">
+                <img src={card.img} width='100%' height='200' />
+            </div>
             <div className="card-footer">
                 <h4 className='card-title'>{card.title}</h4>
                 <p className='card-subtitle'>{card.subtitle}</p>
                 <div className="bottom">
                     <div className="left">
+                        <img src={card.owner.img} width='15' height='15' />
                         <p>{card.owner.name}  {card.owner.date}</p>
                     </div>
                     <div className="right">
@@ -24,4 +27,4 @@ function Card2({card}) {
     );
 }
 
-export default Card2;
+export default Card;

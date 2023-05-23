@@ -1,5 +1,4 @@
-import News from "../Components/News/index.jsx";
-import Tablecard from "../Components/News/index2.jsx";
+import News from "../Components/News";
 import mainStyle from '../Assets/styles/home.css'
 
 function MainPage(props) {
@@ -7,7 +6,6 @@ function MainPage(props) {
         <header style={mainStyle}>
             <main>
                 <News />
-                <Tablecard />
             </main>
         </header>
     )

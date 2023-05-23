@@ -1,0 +1,18 @@
+
+.news-section {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+}
+.cards {
+    width: 50%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+.card {
+    width: 80%;
+   height: 70px;
+}
